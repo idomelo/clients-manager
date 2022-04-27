@@ -5,6 +5,7 @@
 
 .clients-table {
   width: 100%;
+  padding-bottom: 60px;
 }
 
 .mat-column-id {
@@ -25,6 +26,7 @@
 
 .loading-spinner {
   padding: 20px;
+  margin-bottom: 60px;
   background-color: rgba(0, 0, 0, .1);
   display: flex;
   align-items: center;
