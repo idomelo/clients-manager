@@ -1,3 +1,8 @@
+.list__title {
+  margin: 25px 0 15px 0;
+  text-align: center;
+}
+
 .clients-table {
   width: 100%;
 }
@@ -16,4 +21,12 @@
 
 .mat-column-priority {
   font-style: italic;
+}
+
+.loading-spinner {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, .1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

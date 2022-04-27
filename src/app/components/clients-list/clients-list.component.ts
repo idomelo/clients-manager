@@ -9,13 +9,13 @@ import { ClientsService } from 'src/app/services/clients.service';
 })
 export class ClientsListComponent implements OnInit {
 
-  clients: Observable<Client[]>;
+  clients$: Observable<Client[]>;
   displayedColumns: string[] = ['id', 'name', 'priority'];
   // clientsService: ClientsService;
 
   constructor(private clientsService: ClientsService) {
     // this.clientsService = new ClientsService();
-    this.clients = this.clientsService.list();
+    this.clients$ = this.clientsService.list();
   }
 
   ngOnInit(): void {
