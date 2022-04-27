@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Client } from 'src/app/model/client';
-
-const clients: Client[] = [
-  {_id: '1', name: 'Ido Ferreira Melo', priority: '2'}
-];
-
+import { ClientsService } from 'src/app/services/clients.service';
 @Component({
   selector: 'app-clients-list',
   templateUrl: './clients-list.component.html',
@@ -12,10 +8,14 @@ const clients: Client[] = [
 })
 export class ClientsListComponent implements OnInit {
 
+  clients: Client[] = [];
   displayedColumns: string[] = ['id', 'name', 'priority'];
-  dataSource = clients;
+  // clientsService: ClientsService;
 
-  constructor() { }
+  constructor(private clientsService: ClientsService) {
+    // this.clientsService = new ClientsService();
+    this.clients = this.clientsService.list();
+  }
 
   ngOnInit(): void {
   }

@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -28,6 +29,7 @@ import { FormComponent } from './components/form/form.component';
     MatSelectModule,
     MatButtonModule,
     MatTableModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
