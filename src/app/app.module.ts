@@ -8,7 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { CoursesListComponent } from './components/courses-list/courses-list.component';
+import { ClientsListComponent } from './components/clients-list/clients-list.component';
 import { FormComponent } from './components/form/form.component';
 
 
@@ -16,7 +16,7 @@ import { FormComponent } from './components/form/form.component';
   declarations: [
     AppComponent,
     FormComponent,
-    CoursesListComponent
+    ClientsListComponent,
   ],
   imports: [
     BrowserModule,

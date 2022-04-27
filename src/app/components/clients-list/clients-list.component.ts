@@ -6,11 +6,11 @@ const clients: Client[] = [
 ];
 
 @Component({
-  selector: 'app-courses-list',
-  templateUrl: './courses-list.component.html',
-  styleUrls: ['./courses-list.component.css']
+  selector: 'app-clients-list',
+  templateUrl: './clients-list.component.html',
+  styleUrls: ['./clients-list.component.css']
 })
-export class CoursesListComponent implements OnInit {
+export class ClientsListComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'name', 'priority'];
   dataSource = clients;
