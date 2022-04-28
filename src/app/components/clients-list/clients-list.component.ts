@@ -38,6 +38,14 @@ export class ClientsListComponent implements OnInit {
     });
   }
 
+  onRemoveClient(clientId: string) {
+    this.clientsService.delete(clientId)
+    .subscribe(res => {
+      console.log(res)
+      window.location.reload();
+    })
+  }
+
   ngOnInit(): void {
     //Pegando array de clientes de services e atribuindo à 'clientsArr'
     this.clientsService.clientsArray.subscribe(

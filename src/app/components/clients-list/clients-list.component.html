@@ -25,7 +25,7 @@
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let client">
         <!-- Exibe botão somente se o objeto 'client' é o primeiro do Array 'ClientsArr' -->
-        <button mat-raised-button color="accent" *ngIf="clientsArr.indexOf(client) === 0">Atendido</button>
+        <button mat-raised-button color="accent" *ngIf="clientsArr.indexOf(client) === 0" (click)="onRemoveClient(client._id)">Atendido</button>
       </td>
     </ng-container>
   
