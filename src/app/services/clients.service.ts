@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter} from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 
 import { Client } from '../model/client';
@@ -11,13 +11,18 @@ const baseUrl = 'http://localhost:8081/api/clients';
 })
 export class ClientsService{
 
+  clientsArray = new EventEmitter<Client[]>();
+
   constructor(private httpCLient: HttpClient) { }
 
   list() {
     return this.httpCLient.get<Client[]>(baseUrl)
     .pipe(
       first(),
-      tap(clients => console.log(clients))
+      tap(clients => {
+        //Emitindo array de clientes para pegar no comp. pai
+        this.clientsArray.emit(clients)
+      })
     )
   }
 

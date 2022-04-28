@@ -10,6 +10,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ClientsListComponent implements OnInit {
 
+  clientsArr: Array<Client> = [];
+
   clients$: Observable<Client[]>;
   displayedColumns: string[] = ['id', 'name', 'action'];
 
@@ -37,6 +39,12 @@ export class ClientsListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //Pegando array de clientes de services e atribuindo à 'clientsArr'
+    this.clientsService.clientsArray.subscribe(
+      clients => {
+        this.clientsArr = clients;
+      }
+    )
   }
 
 }
