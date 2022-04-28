@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { catchError, Observable, of } from 'rxjs';
 import { Client } from 'src/app/model/client';
 import { ClientsService } from 'src/app/services/clients.service';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-clients-list',
   templateUrl: './clients-list.component.html',
@@ -18,7 +18,7 @@ export class ClientsListComponent implements OnInit {
   durationMessage: number = 3000;
 
   constructor(
-    private clientsService: ClientsService, 
+    private clientsService: ClientsService,
     private _snackBar: MatSnackBar
     ) {
     this.clients$ = this.clientsService.list()

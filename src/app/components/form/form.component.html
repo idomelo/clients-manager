@@ -1,17 +1,30 @@
 <div class="form__wrapper">
   <!-- <h1 class="mat-h2">Bem vindo </h1> -->
-  <form [formGroup]="form" class="form">
-    <div>
+  <form class="form" method="post" #frm="ngForm" (ngSubmit)="onSubmit(frm)">
+    <div class="form-group">
       <h3 class="mat-h3">Digite seu nome:</h3>
       <mat-form-field class="full-width" appearance="outline">
-        <input matInput placeholder="Ex: Raimundo . . ." formControlName="name"/>
+        <input
+          matInput
+          placeholder="Ex: Raimundo . . ."
+          class="form-control"
+          id="name"
+          name="name"
+          [(ngModel)]="client.name"
+          required
+        />
       </mat-form-field>
     </div>
 
-    <div>
+    <div class="form-group">
       <h3 class="mat-h3">Tipo de Atendimento:</h3>
       <mat-form-field class="full-width" appearance="outline">
-        <mat-select formControlName="priority">
+        <mat-select 
+          class="form-control"
+          id="priority"
+          name="priority"
+          [(ngModel)]="client.priority"
+        >
           <mat-option value="0"> Casos Gerais </mat-option>
           <mat-option value="1"> Encaminhado pelo médico </mat-option>
           <mat-option value="2">
@@ -21,7 +34,7 @@
       </mat-form-field>
     </div>
 
-    <button mat-raised-button color="primary" (click)="onSubmit()">
+    <button mat-raised-button color="primary" [disabled]="frm.invalid">
       Incluir na Fila
     </button>
   </form>
