@@ -11,7 +11,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class ClientsListComponent implements OnInit {
 
   clients$: Observable<Client[]>;
-  displayedColumns: string[] = ['id', 'name', 'priority'];
+  displayedColumns: string[] = ['id', 'name', 'action'];
 
   messageError: string = 'Erro ao carregar a Lista, tente novamente mais tarde';
   actionError: string = 'OK';

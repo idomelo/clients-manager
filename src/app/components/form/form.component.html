@@ -1,25 +1,28 @@
-
 <div class="form__wrapper">
   <!-- <h1 class="mat-h2">Bem vindo </h1> -->
-  <form class="form">
+  <form [formGroup]="form" class="form">
     <div>
       <h3 class="mat-h3">Digite seu nome:</h3>
       <mat-form-field class="full-width" appearance="outline">
-        <input matInput placeholder="Ex: Raimundo . . .">
+        <input matInput placeholder="Ex: Raimundo . . ." formControlName="name"/>
       </mat-form-field>
     </div>
 
     <div>
       <h3 class="mat-h3">Tipo de Atendimento:</h3>
       <mat-form-field class="full-width" appearance="outline">
-        <mat-select [(value)]="selected">
-          <mat-option value= "0" > Casos Gerais </mat-option>
-          <mat-option value= "1" > Encaminhado pelo médico </mat-option>
-          <mat-option value= "2" > Gestante, Idoso ou Pessoa com deficiência </mat-option>
+        <mat-select formControlName="priority">
+          <mat-option value="0"> Casos Gerais </mat-option>
+          <mat-option value="1"> Encaminhado pelo médico </mat-option>
+          <mat-option value="2">
+            Gestante, Idoso ou Pessoa com deficiência
+          </mat-option>
         </mat-select>
       </mat-form-field>
     </div>
-  
-    <button mat-raised-button color="primary" type="submit">Incluir na Fila</button>
+
+    <button mat-raised-button color="primary" (click)="onSubmit()">
+      Incluir na Fila
+    </button>
   </form>
 </div>
