@@ -15,7 +15,7 @@ export class ClientsListComponent implements OnInit {
 
   messageError: string = 'Erro ao carregar a Lista, tente novamente mais tarde';
   actionError: string = 'OK';
-  durationMessage: number = 3000;
+  messageDuration: number = 3000;
 
   constructor(
     private clientsService: ClientsService,
@@ -32,7 +32,7 @@ export class ClientsListComponent implements OnInit {
 
   onError() {
     this._snackBar.open(this.messageError, this.actionError, {
-      duration: this.durationMessage,
+      duration: this.messageDuration,
     });
   }
 
