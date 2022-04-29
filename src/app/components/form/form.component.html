@@ -24,10 +24,11 @@
           id="priority"
           name="priority"
           [(ngModel)]="client.priority"
-        >
-          <mat-option value="0"> Casos Gerais </mat-option>
-          <mat-option value="1"> Encaminhado pelo médico </mat-option>
-          <mat-option value="2">
+          required
+          >
+          <mat-option value = "0"> Casos Gerais </mat-option>
+          <mat-option value = "1"> Encaminhado pelo médico </mat-option>
+          <mat-option value = "2">
             Gestante, Idoso ou Pessoa com deficiência
           </mat-option>
         </mat-select>

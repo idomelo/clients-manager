@@ -12,8 +12,13 @@ export class ClientsListComponent implements OnInit {
 
   clientsArr: Array<Client> = [];
 
+  // Array ordenado de acordo com prioridades
+  clientsArrReord: Array<Client> = [];
+
   clients$: Observable<Client[]>;
   displayedColumns: string[] = ['position', 'name', 'priority', 'action'];
+
+  buttonDisabled: boolean = false;
 
   messageError: string = 'Erro ao carregar a Lista, tente novamente mais tarde';
   actionError: string = 'OK';
@@ -39,9 +44,11 @@ export class ClientsListComponent implements OnInit {
   }
 
   onRemoveClient(clientId: string) {
+    this.buttonDisabled = !this.buttonDisabled;
+
     this.clientsService.delete(clientId)
     .subscribe(res => {
-      console.log(res)
+      console.log(res);
       window.location.reload();
     })
   }
@@ -51,6 +58,11 @@ export class ClientsListComponent implements OnInit {
     this.clientsService.clientsArray.subscribe(
       clients => {
         this.clientsArr = clients;
+
+        //Retorna novo array em ordem de prioridade
+        this.clientsArrReord = this.clientsArr.sort(function(a,b) {
+          return b.priority < a.priority ? -1 : b.priority > a.priority ? 1 : 0
+        });
       }
     )
   }
