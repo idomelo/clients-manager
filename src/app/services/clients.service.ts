@@ -1,4 +1,4 @@
-import { Injectable, Output, EventEmitter} from '@angular/core';
+import { Injectable, EventEmitter} from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 
 import { Client } from '../model/client';
@@ -26,11 +26,11 @@ export class ClientsService{
     )
   }
 
-  create(data: any): Observable<any> {
+  create(data: object): Observable<Object> {
     return this.httpCLient.post(baseUrl, data);
   }
 
-  delete(id: any): Observable<any> {
+  delete(id: string): Observable<Object> {
     return this.httpCLient.delete(`${baseUrl}/${id}`);
   }
 }

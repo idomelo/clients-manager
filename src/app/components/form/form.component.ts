@@ -25,7 +25,7 @@ export class FormComponent implements OnInit {
   }
 
   onSubmit(frm: any) {
-    const data = {
+    const data: object = {
       name: this.client.name,
       priority: this.client.priority
     };

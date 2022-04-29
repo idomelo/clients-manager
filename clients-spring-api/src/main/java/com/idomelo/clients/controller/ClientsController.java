@@ -50,7 +50,7 @@ public class ClientsController {
 	}
 	
 	@DeleteMapping("/{id}")
-	public ResponseEntity<HttpStatus> deleteTutorial(@PathVariable("id") long id) {
+	public ResponseEntity<HttpStatus> deleteClient(@PathVariable("id") long id) {
 		try {
 			clientRepository.deleteById(id);
 			return new ResponseEntity<>(HttpStatus.OK);
