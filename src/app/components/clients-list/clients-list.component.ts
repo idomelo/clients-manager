@@ -13,7 +13,7 @@ export class ClientsListComponent implements OnInit {
   clientsArr: Array<Client> = [];
 
   clients$: Observable<Client[]>;
-  displayedColumns: string[] = ['id', 'name', 'action'];
+  displayedColumns: string[] = ['position', 'name', 'priority', 'action'];
 
   messageError: string = 'Erro ao carregar a Lista, tente novamente mais tarde';
   actionError: string = 'OK';
